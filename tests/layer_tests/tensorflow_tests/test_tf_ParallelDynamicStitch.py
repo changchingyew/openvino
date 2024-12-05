@@ -74,8 +74,6 @@ class TestParallelDynamicStitch(CommonTFLayerTest):
                                            use_legacy_frontend):
         if use_legacy_frontend:
             pytest.skip("DynamicStitch operation is not supported via legacy frontend.")
-        if ie_device == 'GPU':
-            pytest.skip("GPU error: Invalid constant blob dimensions")
         self._test(*self.create_parallel_dynamic_stitch_net(**params),
                    ie_device, precision, ir_version, temp_dir=temp_dir,
                    use_legacy_frontend=use_legacy_frontend)
@@ -92,8 +90,6 @@ class TestParallelDynamicStitch(CommonTFLayerTest):
                                                      use_legacy_frontend):
         if use_legacy_frontend:
             pytest.skip("DynamicStitch operation is not supported via legacy frontend.")
-        if ie_device == 'GPU':
-            pytest.skip("GPU error: Invalid constant blob dimensions")
         self._test(*self.create_parallel_dynamic_stitch_net(**params),
                    ie_device, precision, ir_version, temp_dir=temp_dir,
                    use_legacy_frontend=use_legacy_frontend)
